@@ -7,6 +7,7 @@ from config import settings
 from bitrix24.client import Bitrix24Client
 from monitoring.service import MonitoringService
 from monitoring.logger_handler import log_deal_event
+from monitoring.telegram_handler import TelegramNotifier
 from api.routes import router, set_service
 
 logging.basicConfig(
@@ -31,6 +32,18 @@ async def lifespan(app: FastAPI):
         assigned_filter=settings.assigned_filter or None,
     )
     service.add_handler(log_deal_event)
+
+    if settings.telegram_enabled:
+        tg = TelegramNotifier(
+            bot_token=settings.telegram_bot_token,
+            chat_id=settings.telegram_chat_id,
+            notify_events=settings.telegram_events,
+        )
+        service.add_handler(tg)
+        logger.info("Telegram notifications enabled (chat_id=%s)", settings.telegram_chat_id)
+    else:
+        logger.info("Telegram notifications disabled (set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID)")
+
     set_service(service)
 
     await service.start()
