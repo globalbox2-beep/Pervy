@@ -3,7 +3,6 @@ name: Deploy Website to GitHub Pages
 on:
   push:
     branches: [claude/sales-anatomy-website-XdtQ2, main]
-    paths: [website/**]
 
 permissions:
   contents: read
