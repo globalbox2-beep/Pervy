@@ -1,0 +1,405 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const TG = 'https://t.me/+79826691201';
+
+const systemElements = [
+  { n: '01', title: 'Роли и структура', text: 'Кто за что отвечает. Как организована команда. Есть ли логика в распределении функций.' },
+  { n: '02', title: 'Процессы и воронка', text: 'Как движется сделка. Что происходит на каждом этапе. Где клиент уходит.' },
+  { n: '03', title: 'Управленческая логика', text: 'Как принимаются решения. Насколько они системны. Откуда берутся приоритеты.' },
+  { n: '04', title: 'Точки контроля', text: 'Как руководитель видит, что происходит. Что контролируется и с какой регулярностью.' },
+  { n: '05', title: 'CRM и данные', text: 'Как информация о сделках используется для управления, а не только хранится.' },
+  { n: '06', title: 'Обучение и развитие', text: 'Как команда становится сильнее. Есть ли система или всё случайно.' },
+  { n: '07', title: 'Дисциплина исполнения', text: 'Выполняются ли договорённости. Соблюдаются ли стандарты.' },
+];
+
+const breakPoints = [
+  { title: 'Активность есть — результата нет', text: 'Много звонков, встреч, переписки. Но конверсия низкая, цикл длинный, результат непредсказуемый.' },
+  { title: 'Зависимость от руководителя', text: 'Без личного участия собственника или РОПа сделки не закрываются. Система не работает без ручного управления.' },
+  { title: 'Непонятно, где теряем', text: 'На каком этапе воронки уходят клиенты? Почему? Данных нет или они ни о чём не говорят.' },
+  { title: 'Всё держится на «звёздах»', text: '1–2 продавца делают основной результат. Остальные — нет. Масштабировать модель невозможно.' },
+  { title: 'После обучения ничего не меняется', text: 'Тренинги проводятся. Эффект исчезает через 2 недели. Потому что система не изменилась.' },
+  { title: 'CRM есть, но не помогает', text: 'Данные заносятся. Но управленческих выводов из них никто не делает. Это архив, а не инструмент.' },
+];
+
+const forWhom = [
+  'Собственник или руководитель, который чувствует: что-то не так, но сложно понять — что именно',
+  'Компания с продажами, но без системы: есть активность, есть люди, нет предсказуемости',
+  'Руководитель, которому нужен не очередной тренинг, а честный взгляд на систему',
+  'Тот, кто хочет расти, но не понимает — за счёт чего именно',
+];
+
+const notForWhom = [
+  'Стартап без первых продаж — сначала сделайте продажи, потом стройте систему',
+  'Тот, кто ищет быстрый результат без изменений в том, как устроена работа',
+  'Тем, кому нужен мотивационный тренинг, а не системный разбор',
+];
+---
+
+<Layout>
+
+  <!-- HEADER -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 header-transparent transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div>
+        <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase block leading-none mb-0.5">Артём Владыкин</span>
+        <span class="text-sm font-semibold text-slate-800 leading-none">Анатомия системы продаж</span>
+      </div>
+      <a
+        href={TG}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors duration-200"
+      >
+        Записаться
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="pt-28 pb-20 md:pt-36 md:pb-28 dot-pattern bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          <div>
+            <div class="inline-flex items-center gap-2 mb-6">
+              <span class="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+              <span class="text-sm text-slate-400 font-medium tracking-wide">VLADYKIN.PRO</span>
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-bold text-slate-900 leading-[1.05] tracking-tight mb-6">
+              Анатомия<br />системы<br />продаж
+            </h1>
+            <p class="text-xl text-slate-500 font-light leading-relaxed mb-4">
+              Продажи — это система. Она работает как целое или не работает совсем.
+            </p>
+            <p class="text-base text-slate-400 leading-relaxed mb-10 max-w-md">
+              Если результат нестабилен, управление не отпускает, а где именно проблема — непонятно, скорее всего дело в устройстве системы, а не в отдельных её частях.
+            </p>
+            <a
+              href={TG}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white font-medium px-8 py-4 rounded-xl transition-colors duration-200 text-base"
+            >
+              Записаться на разбор
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="flex justify-center lg:justify-end">
+            <div class="relative">
+              <div class="absolute inset-0 translate-x-4 translate-y-4 bg-blue-100 rounded-2xl"></div>
+              <div class="relative w-64 sm:w-72 lg:w-80 aspect-[3/4] rounded-2xl shadow-md overflow-hidden bg-slate-200">
+                <img
+                  src="/images/artem.jpg"
+                  alt="Артём Владыкин"
+                  class="w-full h-full object-cover object-top"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ИДЕЯ -->
+    <section class="py-20 md:py-28 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-3xl">
+          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-4 block">О проекте</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-8">
+            Другой взгляд<br />на продажи
+          </h2>
+          <div class="space-y-5 text-lg text-slate-500 leading-relaxed">
+            <p>
+              Большинство проблем в продажах — не технические. Их не решить новым скриптом, тренингом по возражениям или более жёстким контролем.
+            </p>
+            <p>
+              Причина, как правило, структурная: элементы системы работают порознь, без единой логики. Роли не разграничены. Процессы не выстроены. Управленческие решения принимаются по интуиции, а не по данным.
+            </p>
+            <p>
+              «Анатомия системы продаж» — это подход, при котором вместо поиска очередного инструмента мы разбираем <span class="text-slate-700 font-medium">устройство системы целиком</span>: что в ней есть, как элементы связаны, где возникают разрывы и что с этим делать.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ИЗ ЧЕГО СОСТОИТ СИСТЕМА -->
+    <section class="py-20 md:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-14">
+          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-4 block">Устройство</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
+            Из чего состоит<br />система продаж
+          </h2>
+          <p class="text-lg text-slate-400 max-w-lg">
+            Система продаж — это не отдел и не набор техник. Это связная конструкция из нескольких слоёв.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {systemElements.map((el) => (
+            <div class="p-6 border border-slate-200 rounded-xl hover:border-blue-200 hover:bg-blue-50/40 transition-all duration-200">
+              <span class="text-xs font-bold tracking-widest text-blue-600 mb-3 block">{el.n}</span>
+              <h3 class="text-base font-semibold text-slate-900 mb-2">{el.title}</h3>
+              <p class="text-sm text-slate-400 leading-relaxed">{el.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ГДЕ ЛОМАЕТСЯ -->
+    <section class="py-20 md:py-28 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-14">
+          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-4 block">Диагностика</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-4">
+            Почему продажи<br />буксуют
+          </h2>
+          <p class="text-lg text-slate-400 max-w-lg">
+            Симптомы могут быть разными. Причины — несколько.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {breakPoints.map((bp) => (
+            <div class="flex gap-4 p-6 bg-white border border-slate-200 rounded-xl">
+              <div class="w-0.5 flex-shrink-0 bg-blue-600 rounded-full self-stretch"></div>
+              <div>
+                <h3 class="text-base font-semibold text-slate-900 mb-1.5">{bp.title}</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">{bp.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОДХОД -->
+    <section class="py-20 md:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+          <div class="order-2 lg:order-1 flex justify-start">
+            <div class="relative max-w-xs w-full">
+              <div class="absolute -inset-4 bg-blue-50 rounded-3xl"></div>
+              <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-200">
+                <img
+                  src="/images/artem.jpg"
+                  alt="Артём Владыкин"
+                  class="w-full h-full object-cover object-top"
+                  onerror="this.style.display='none'"
+                />
+              </div>
+              <div class="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-slate-100">
+                <p class="font-semibold text-slate-900 text-sm">Артём Владыкин</p>
+                <p class="text-xs text-slate-400 mt-0.5">Консультант по системам продаж · VLADYKIN.PRO</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-1 lg:order-2">
+            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-4 block">Подход</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-8">
+              Как я работаю
+            </h2>
+            <div class="space-y-5 text-lg text-slate-500 leading-relaxed">
+              <p>Я не выдаю готовые рекомендации до того, как разобрался в ситуации.</p>
+              <p>
+                Работа всегда начинается с диагностики — детального разбора того, как устроена система продаж сейчас: что работает, что нет, где есть логика, а где её нет.
+              </p>
+              <p>
+                Только понимая реальное устройство системы, можно точно сказать: что нужно изменить, в каком порядке и с каким ожидаемым результатом.
+              </p>
+              <p class="text-slate-800 font-medium">Без диагноза — нет рецепта.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ФОРМАТЫ -->
+    <section class="py-20 md:py-28 bg-slate-50" id="formats">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-14">
+          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-4 block">Форматы работы</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+            Как мы можем<br />поработать
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <div class="md:col-span-2 p-8 md:p-10 bg-blue-700 rounded-2xl text-white">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+              <div>
+                <span class="text-xs font-semibold tracking-widest text-blue-200 uppercase mb-2 block">Индивидуально</span>
+                <h3 class="text-xl sm:text-2xl font-bold leading-snug">Разбор системы с собственником<br class="hidden sm:block" /> или руководителем</h3>
+              </div>
+              <div class="flex-shrink-0">
+                <p class="text-xs text-blue-200 mb-1">Первичная консультация</p>
+                <p class="text-base font-semibold">По запросу</p>
+              </div>
+            </div>
+            <p class="text-blue-100 leading-relaxed mb-3">
+              Индивидуальная диагностическая сессия. Разбираем текущую систему продаж, находим ключевые ограничения и определяем приоритеты.
+            </p>
+            <p class="text-sm text-blue-200 mb-8">
+              Результат: ясная картина системы, конкретные выводы, понимание следующих шагов.
+            </p>
+            <a
+              href={TG}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-semibold px-6 py-3 rounded-lg transition-colors duration-200 text-sm"
+            >
+              Записаться
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="p-7 bg-white border border-slate-200 rounded-2xl flex flex-col">
+            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-3 block">Групповой формат</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">Разбор системы с командой</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-3 flex-grow">
+              Рабочая сессия с участием команды. Позволяет увидеть расхождение между управленческой логикой и реальной практикой.
+            </p>
+            <p class="text-xs text-slate-300 mb-6">Результат: объёмная диагностическая картина, выявленные разрывы и зоны внимания.</p>
+            <a href={TG} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors">
+              Обсудить формат →
+            </a>
+          </div>
+
+          <div class="p-7 bg-white border border-slate-200 rounded-2xl flex flex-col">
+            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-3 block">Долгосрочная работа</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-3">Сопровождение по системе продаж</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-3 flex-grow">
+              Не разовая диагностика, а регулярное сопровождение. Поддержка изменений, внешняя сверка решений, развитие системы в динамике.
+            </p>
+            <p class="text-xs text-slate-300 mb-6">Результат: более управляемая система, постоянная обратная связь на ключевые решения.</p>
+            <a href={TG} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors">
+              Обсудить формат →
+            </a>
+          </div>
+
+          <div class="md:col-span-2 p-7 bg-white border border-slate-200 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-3 block">Открытое мероприятие</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Тренинг-диагностика по системе продаж</h3>
+                <p class="text-sm text-slate-400 leading-relaxed max-w-xl">
+                  Открытый формат для руководителей и собственников. Каждый участник анализирует свою систему продаж по единой методологии и уходит с конкретными выводами.
+                </p>
+              </div>
+              <a href={TG} target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors whitespace-nowrap">
+                Узнать о ближайшем →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- КОМУ ПОДХОДИТ -->
+    <section class="py-20 md:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14">
+
+          <div>
+            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-4 block">Аудитория</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-8">
+              Кому это<br />нужно
+            </h2>
+            <ul class="space-y-4">
+              {forWhom.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                  </span>
+                  <span class="text-slate-600 leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <span class="text-xs font-semibold tracking-widest text-slate-300 uppercase mb-4 block">Не подойдёт, если</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-8 invisible select-none">—</h2>
+            <ul class="space-y-4">
+              {notForWhom.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-slate-100 flex-shrink-0 flex items-center justify-center mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                  </span>
+                  <span class="text-slate-400 leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТ -->
+    <section class="py-24 md:py-36 bg-blue-700 dot-pattern-dark" id="contact">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          Начать разговор
+        </h2>
+        <p class="text-xl text-blue-100 leading-relaxed mb-3 max-w-lg mx-auto">
+          Если вы узнали свою ситуацию — напишите. Разберёмся, нужен ли разбор и в каком формате.
+        </p>
+        <p class="text-blue-300 mb-12 text-sm">Без обязательств и давления.</p>
+        <a
+          href={TG}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-white text-blue-700 hover:bg-blue-50 font-semibold px-10 py-5 rounded-xl transition-colors duration-200 text-base shadow-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          Написать в Telegram
+        </a>
+        <p class="text-blue-300 text-sm mt-6">+7 982 669-12-01</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-8 bg-slate-900">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-slate-500 text-sm">© 2025 Артём Владыкин · VLADYKIN.PRO</p>
+      <p class="text-slate-600 text-sm">Анатомия системы продаж</p>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 24) {
+        header?.classList.remove('header-transparent');
+        header?.classList.add('header-scrolled');
+      } else {
+        header?.classList.remove('header-scrolled');
+        header?.classList.add('header-transparent');
+      }
+    });
+  </script>
+
+</Layout>
