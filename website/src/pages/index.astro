@@ -93,11 +93,12 @@ const notForWhom = [
           <div class="flex justify-center lg:justify-end">
             <div class="relative">
               <div class="absolute inset-0 translate-x-4 translate-y-4 bg-blue-100 rounded-2xl"></div>
-              <div class="relative w-64 sm:w-72 lg:w-80 aspect-[3/4] rounded-2xl shadow-md overflow-hidden bg-slate-200">
+              <div class="relative w-64 sm:w-72 lg:w-80 aspect-[3/4] rounded-2xl shadow-md overflow-hidden bg-gradient-to-br from-blue-100 via-slate-100 to-slate-200">
+                <span class="absolute inset-0 flex items-center justify-center text-7xl font-bold text-blue-200/60 select-none pointer-events-none">АВ</span>
                 <img
-                  src="/images/artem.jpg"
+                  src="/Pervy/images/artem.jpg"
                   alt="Артём Владыкин"
-                  class="w-full h-full object-cover object-top"
+                  class="absolute inset-0 w-full h-full object-cover object-top"
                   onerror="this.style.display='none'"
                 />
               </div>
@@ -109,14 +110,14 @@ const notForWhom = [
     </section>
 
     <!-- ИДЕЯ -->
-    <section class="py-20 md:py-28 bg-slate-50">
+    <section class="py-20 md:py-28 bg-slate-900">
       <div class="max-w-6xl mx-auto px-6">
         <div class="max-w-3xl">
-          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-4 block">О проекте</span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight mb-8">
+          <span class="text-xs font-semibold tracking-widest text-blue-400 uppercase mb-4 block">О проекте</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white leading-tight mb-8">
             Другой взгляд<br />на продажи
           </h2>
-          <div class="space-y-5 text-lg text-slate-500 leading-relaxed">
+          <div class="space-y-5 text-lg text-slate-300 leading-relaxed">
             <p>
               Большинство проблем в продажах — не технические. Их не решить новым скриптом, тренингом по возражениям или более жёстким контролем.
             </p>
@@ -124,7 +125,7 @@ const notForWhom = [
               Причина, как правило, структурная: элементы системы работают порознь, без единой логики. Роли не разграничены. Процессы не выстроены. Управленческие решения принимаются по интуиции, а не по данным.
             </p>
             <p>
-              «Анатомия системы продаж» — это подход, при котором вместо поиска очередного инструмента мы разбираем <span class="text-slate-700 font-medium">устройство системы целиком</span>: что в ней есть, как элементы связаны, где возникают разрывы и что с этим делать.
+              «Анатомия системы продаж» — это подход, при котором вместо поиска очередного инструмента мы разбираем <span class="text-white font-medium">устройство системы целиком</span>: что в ней есть, как элементы связаны, где возникают разрывы и что с этим делать.
             </p>
           </div>
         </div>
@@ -145,8 +146,8 @@ const notForWhom = [
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {systemElements.map((el) => (
-            <div class="p-6 border border-slate-200 rounded-xl hover:border-blue-200 hover:bg-blue-50/40 transition-all duration-200">
-              <span class="text-xs font-bold tracking-widest text-blue-600 mb-3 block">{el.n}</span>
+            <div class="p-6 border border-slate-200 rounded-xl hover:border-blue-300 hover:shadow-md transition-all duration-200 group">
+              <div class="inline-flex w-9 h-9 rounded-lg bg-blue-600 text-white items-center justify-center text-xs font-bold mb-4">{el.n}</div>
               <h3 class="text-base font-semibold text-slate-900 mb-2">{el.title}</h3>
               <p class="text-sm text-slate-400 leading-relaxed">{el.text}</p>
             </div>
@@ -189,11 +190,12 @@ const notForWhom = [
           <div class="order-2 lg:order-1 flex justify-start">
             <div class="relative max-w-xs w-full">
               <div class="absolute -inset-4 bg-blue-50 rounded-3xl"></div>
-              <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-200">
+              <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 via-slate-100 to-slate-200">
+                <span class="absolute inset-0 flex items-center justify-center text-8xl font-bold text-blue-200/60 select-none pointer-events-none">АВ</span>
                 <img
-                  src="/images/artem.jpg"
+                  src="/Pervy/images/artem.jpg"
                   alt="Артём Владыкин"
-                  class="w-full h-full object-cover object-top"
+                  class="absolute inset-0 w-full h-full object-cover object-top"
                   onerror="this.style.display='none'"
                 />
               </div>
@@ -217,7 +219,9 @@ const notForWhom = [
               <p>
                 Только понимая реальное устройство системы, можно точно сказать: что нужно изменить, в каком порядке и с каким ожидаемым результатом.
               </p>
-              <p class="text-slate-800 font-medium">Без диагноза — нет рецепта.</p>
+              <div class="mt-2 pl-5 border-l-4 border-blue-600">
+                <p class="text-slate-900 font-semibold text-xl leading-snug">Без диагноза — нет рецепта.</p>
+              </div>
             </div>
           </div>
 
